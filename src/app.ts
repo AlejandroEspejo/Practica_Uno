@@ -1,11 +1,21 @@
-let array : Array<string> = ['kambei', 'gorobei', 'shichiroji', 'kyuzo', 'heihachi', 'katsushiro', 'kikuchiyo'];
+var string = "172.16.254.1"+" ";
 let count = 0;
-for(let i=0 ; i<array.length ; i++)
-    for(let j=i+1 ; j<array.length ; j++)
-        if(array[i].charAt(0)==array[j].charAt(0))
+var number="";
+var comp=1;
+if(string.charAt(0)=='.' || string.charAt(string.length-1)=='.')
+    console.log("false");
+else
+    for(let i=0; i<string.length-1; i++)
+        if(string.charAt(i)!='.')
+            number=number+string.charAt(i);
+        else
         {
-            array[i]="_";
-            array[j]="_";
+            if(Number(number)>255)
+                comp=0;
             count++;
+            number="";
         }
-console.log(count);
+if(comp == 1 && count == 3) 
+    console.log("True");
+else
+    console.log("False");
