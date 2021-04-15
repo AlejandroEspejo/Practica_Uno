@@ -1,8 +1,6 @@
-var string1 = "bangnab";
-var string2 = "";
-for (var i = string1.length; i >= 0; i--)
-    string2 = string2 + string1.charAt(i);
-if (string1 == string2)
-    console.log("true");
-else
-    console.log("false");
+var array = [3, 6, -2, -5, 7, 3];
+var number = array[0] * array[1];
+for (var i = 1; i < array.length - 1; i++)
+    if (array[i] * array[i + 1] > number)
+        number = array[i] * array[i + 1];
+console.log(number);
