@@ -1,12 +1,14 @@
-var matrix = [[0, 1, 1, 2],
-    [0, 5, 0, 0],
-    [2, 0, 3, 3]];
+var string1 = "aabcc";
+var string2 = "adcaa";
+var array = [];
 var count = 0;
-for (var i = 0; i < matrix[0].length; i++)
-    if (matrix[0][i] != 0)
-        count = count + matrix[0][i];
-for (var i = 1; i < matrix.length; i++)
-    for (var j = 0; j < matrix[0].length; j++)
-        if (matrix[i][j] != 0 && matrix[i - 1][j] != 0)
-            count = count + matrix[i][j];
+for (var i = 0; i < string2.length; i++)
+    array[i] = string2.charAt(i);
+for (var i = 0; i < string1.length; i++)
+    for (var j = 0; j < array.length; j++)
+        if (string1.charAt(i) == array[j] && array[j] != "") {
+            count++;
+            array[j] = "";
+            break;
+        }
 console.log(count);
