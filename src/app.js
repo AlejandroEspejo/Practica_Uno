@@ -1,12 +1,12 @@
-var array = [6, 2, 3, 8];
+var matrix = [[0, 1, 1, 2],
+    [0, 5, 0, 0],
+    [2, 0, 3, 3]];
 var count = 0;
-for (var i = 0; i < array.length; i++)
-    for (var j = i + 1; j < array.length; j++)
-        if (array[i] > array[j]) {
-            var aux = array[i];
-            array[i] = array[j];
-            array[j] = aux;
-        }
-for (var i = array.length - 1; i > 0; i--)
-    count = count + ((array[i] - array[i - 1]) - 1);
+for (var i = 0; i < matrix[0].length; i++)
+    if (matrix[0][i] != 0)
+        count = count + matrix[0][i];
+for (var i = 1; i < matrix.length; i++)
+    for (var j = 0; j < matrix[0].length; j++)
+        if (matrix[i][j] != 0 && matrix[i - 1][j] != 0)
+            count = count + matrix[i][j];
 console.log(count);
