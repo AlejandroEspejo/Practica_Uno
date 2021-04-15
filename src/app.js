@@ -1,14 +1,10 @@
-var number = 9;
-var count = 1;
-var count2 = 2;
-while (count <= number) {
-    var aux = 0;
-    for (var i = 1; i <= count2; i++)
-        if (count2 % i == 0)
-            aux++;
-    if (aux == 2) {
-        console.log(count2);
-        count++;
-    }
-    count2++;
-}
+var array = ['kambei', 'gorobei', 'shichiroji', 'kyuzo', 'heihachi', 'katsushiro', 'kikuchiyo'];
+var count = 0;
+for (var i = 0; i < array.length; i++)
+    for (var j = i + 1; j < array.length; j++)
+        if (array[i].charAt(0) == array[j].charAt(0)) {
+            array[i] = "_";
+            array[j] = "_";
+            count++;
+        }
+console.log(count);
